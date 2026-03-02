@@ -69,8 +69,8 @@
   <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
   
   <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="theme-color" content="#f4f1ec">
+  <meta name="msapplication-TileColor" content="#f4f1ec">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
@@ -107,8 +107,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -189,200 +189,243 @@
 </head>
 <body>
 
+<div class="grain"><canvas id="grain-canvas"></canvas></div>
+<canvas id="bg-canvas"></canvas>
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
+<button class="scroll-top" onclick="scrollToTop()" aria-label="Scroll to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
 
+<div class="page">
 
-  <main id="main-content">
+  <!-- ========== HERO ========== -->
   <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <img src="static/img/output6.gif" alt="title" style="clip-path: inset(2px 2px 2px 2px);">
-            <h3 class="title is-3 publication-title">Learning 3D Compliant Flow Matching Policies from Force and Demonstration-Guided Simulation Data</h3>
-            <div class="is-size-4 publication-authors">
-              <span class="author-block">
-                <a href="https://imtianyuli.com/" target="_blank" rel="noopener">Tianyu Li</a><sup>*</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://www.yihanli.io/" target="_blank" rel="noopener">Yihan Li</a><sup>*</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://zizhe.io/" target="_blank" rel="noopener">Zizhe Zhang</a>,
-              </span>
-              <span class="author-block">
-                <a href="https://nbfigueroa.github.io/" target="_blank" rel="noopener">Nadia Figueroa</a>
-              </span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>*</sup> Equal Contribution</span>
-            </div>
-            <div class="is-size-4 publication-authors">
-              <span class="author-block">University of Pennsylvania</span>
-            </div>
-            <div class="is-size-4 publication-authors">
-              <span class="author-block"><em>IEEE International Conference on Robotics & Automation (ICRA)</em>, 2026</span>
-            </div>
-            
+    <img src="static/img/output6.gif" alt="Flow with the Force Field" class="hero-gif reveal">
 
-                  <!-- <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div> -->
+    <h1 class="hero-title reveal reveal-d1">
+      Learning 3D Compliant Flow Matching Policies<br>
+      from Force &amp; Demonstration-Guided Simulation Data
+    </h1>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                      <span class="link-block">
-                        <a href="https://drive.google.com/file/d/1tbmx122y1LLpVYuYcNIsVHHCA-6vYXj7/view?usp=drive_link" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>PDF</span>
-                      </a>
-                    </span>
+    <div class="authors reveal reveal-d2">
+      <span><a href="https://imtianyuli.com/" target="_blank" rel="noopener">Tianyu Li</a><sup>*</sup></span>
+      <span><a href="https://www.yihanli.io/" target="_blank" rel="noopener">Yihan Li</a><sup>*</sup></span>
+      <span><a href="https://zizhe.io/" target="_blank" rel="noopener">Zizhe Zhang</a></span>
+      <span><a href="https://nbfigueroa.github.io/" target="_blank" rel="noopener">Nadia Figueroa</a></span>
+    </div>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <!-- <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span> -->
+    <p class="hero-info reveal reveal-d3"><sup>*</sup> Equal Contribution &middot; University of Pennsylvania</p>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="#" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (Coming Soon)</span>
-                  </a>
-                </span>
+    <div class="venue-rule reveal reveal-d3">
+      <span class="line"></span>
+      <span class="tag">ICRA 2026</span>
+      <span class="line"></span>
+    </div>
 
-                <!-- TODO: Update with your arXiv paper ID -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span> -->
+    <div class="hero-btns reveal reveal-d4">
+      <a href="https://arxiv.org/abs/2510.02738" target="_blank" class="btn btn-fill">
+        <i class="fas fa-file-pdf"></i> Paper
+      </a>
+      <a class="btn btn-outline btn-disabled">
+        <i class="fab fa-github"></i> Code (Coming Soon)
+      </a>
+    </div>
+
+    <!-- CONCEPT VISUALIZATION -->
+    <div class="concept reveal reveal-d4">
+      <div class="concept-card">
+        <!-- Phase labels -->
+        <div class="cc-header">
+          <span class="cc-tag">Data Collection</span>
+          <span class="cc-tag">Deployment</span>
+        </div>
+        <!-- Single continuous flow -->
+        <div class="cc-flow">
+          <div class="cc-node">
+            <div class="cc-circle cc-demo-circle">
+              <span class="cc-num">1</span>
             </div>
+            <div class="cc-name">Demo</div>
+          </div>
+          <div class="cc-conn">
+            <span class="cc-dot" style="--d:0s"></span>
+            <span class="cc-dot" style="--d:0.7s"></span>
+            <span class="cc-dot" style="--d:1.4s"></span>
+          </div>
+          <div class="cc-node">
+            <div class="cc-circle cc-sim-circle">
+              <span class="cc-sim-label">&infin;</span>
+              <span class="cc-orb" style="--a:0;--r:16px;--t:6s"></span>
+              <span class="cc-orb" style="--a:60;--r:20px;--t:8s"></span>
+              <span class="cc-orb" style="--a:120;--r:14px;--t:7s"></span>
+              <span class="cc-orb" style="--a:180;--r:18px;--t:9s"></span>
+              <span class="cc-orb" style="--a:240;--r:16px;--t:6.5s"></span>
+              <span class="cc-orb" style="--a:300;--r:20px;--t:7.5s"></span>
+            </div>
+            <div class="cc-name">Sim Data</div>
+          </div>
+          <div class="cc-bridge">
+            <div class="cc-bridge-label">Zero-Shot Sim2Real</div>
+            <div class="cc-conn">
+              <span class="cc-dot" style="--d:0s"></span>
+              <span class="cc-dot" style="--d:0.6s"></span>
+            </div>
+          </div>
+          <div class="cc-inputs">
+            <div class="cc-chip cc-v"><i class="fas fa-eye"></i><span>Vision</span></div>
+            <div class="cc-chip cc-f"><i class="fas fa-hand-rock"></i><span>Force</span></div>
+            <div class="cc-chip cc-p"><i class="fas fa-crosshairs"></i><span>Proprio</span></div>
+          </div>
+          <div class="cc-conn cc-conn-flow">
+            <!-- Vision stream (top) -->
+            <span class="cc-flow-dot" style="--sy:-16px;--d:0s;--c:#5b8fb9"></span>
+            <span class="cc-flow-dot" style="--sy:-16px;--d:1.1s;--c:#5b8fb9"></span>
+            <!-- Force stream (middle) -->
+            <span class="cc-flow-dot" style="--sy:0px;--d:0s;--c:var(--warm)"></span>
+            <span class="cc-flow-dot" style="--sy:0px;--d:1.1s;--c:var(--warm)"></span>
+            <!-- Proprio stream (bottom) -->
+            <span class="cc-flow-dot" style="--sy:16px;--d:0s;--c:#7a9e7a"></span>
+            <span class="cc-flow-dot" style="--sy:16px;--d:1.1s;--c:#7a9e7a"></span>
+          </div>
+          <div class="cc-node">
+            <div class="cc-circle cc-out-circle">
+              <div class="cc-pulse-ring"></div>
+              <div class="cc-pulse-ring cc-pr2"></div>
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="cc-name">Compliant<br>Output</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
+    <div class="scroll-cue">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
 
-<!-- TLDR -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h4 class="title is-4">Brief Overview</h4>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
+  <!-- ========== 01 OVERVIEW ========== -->
+  <section class="ed-section">
+    <div class="ed-num reveal">01</div>
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">Overview</span>
+        <h2 class="ed-heading">What We Built</h2>
+      </div>
+      <div class="callout-box reveal reveal-d1">
+        <div class="ed-body">
           <p>
-            This framework uses a lightweight scheme to generate <b>force-informed training data </b> entirely in simulation from a <b>single human demo</b>. With this data, we train <b>point cloud + force attending policies</b> with <b>passive impedance outputs</b>. At execution, our passive impedance controller ensures compliant, safe interactions. Together, these components enable robots to generalize from simple geometry in sim to unseen real-world objects and spatial configurations.
+            This framework uses a lightweight scheme to generate <b>force-informed training data</b> entirely in simulation from a <b>single human demo</b>. With this data, we train <b>point cloud + force attending policies</b> with <b>passive impedance outputs</b>. At execution, our passive impedance controller ensures compliant, safe interactions. Together, these components enable robots to generalize from simple geometry in sim to unseen real-world objects and spatial configurations.
           </p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/website_output.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Paper Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            While visuomotor policy has made advancements in recent years, contact-rich tasks still remain a challenge. Robotic manipulation tasks that require continuous contact demand explicit handling of compliance and force. However, most visuomotor policies ignore compliance, overlooking the importance of physical interaction with the real world, often leading to excessive contact forces or fragile behavior under uncertainty. Introducing force information into vision-based imitation learning could help improve awareness of contacts. However, current visuomotor policy approaches require a lot of data to perform well. One remedy for data scarcity is to generate data in simulation, yet computationally taxing processes are required to generate data good enough not to suffer from the Sim2Real gap. In this work, we introduce a framework for generating force-informed data in simulation, instantiated by a single human demonstration, and show how coupling with a compliant policy improves the performance of a visuomotor policy learned from synthetic data. We validate our approach on real-robot tasks, including non-prehensile block flipping and a bi-manual object moving, where the learned policy exhibits reliable contact maintenance and adaptation to novel conditions.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-<!-- Paper poster -->
-<section class="hero is-small is-light" style="background: #ffffff;">
-  <div class="hero-body">
-      <div class="container">
-      <!-- <h2 class="title" style="text-align: center;">Flow with the Force Field Pipeline</h2> -->
-
-      <img style="display: block; margin: auto;" src="static/img/pipeline.png" alt="Pipeline" width="70%"/>
-        
-      </div>
-
-     </br>
-      <div class="container has-text-justified" style="width: 60%; text-align: center; text-justify: auto;">
-        <p><b>3D Compliant Visuomotor Policy Learning Framework:</b> Starting from a single simulation demonstration, we generate point cloud and force data by introducing virtual targets and applying Laplacian editing beyond the original demonstration. This augmented data is used to train a flow‑matching policy that receives point cloud and force input and predicts actions, including an impedance parameter. At rollout time, the policy’s output is synthesized into a state velocity field, which is then executed using a Passive Impedance Controller to ensure compliant behaviors. <i>While our data is only generated with one simple geometry for both tasks, the trained policies produce generalizable capabilities beyond the original shapes by using our framework.</i></p>
       </div>
     </div>
   </section>
-<!--End paper poster-->
 
-
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
+  <!-- ========== 02 VIDEO ========== -->
+  <section class="ed-section">
+    <div class="ed-num reveal">02</div>
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">Results</span>
+        <h2 class="ed-heading">See It In Action</h2>
+      </div>
+      <div class="video-container reveal reveal-d1">
+        <video controls muted loop preload="metadata">
+          <source src="static/videos/website_output.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
+  </section>
+
+  <!-- ========== 03 ABSTRACT ========== -->
+  <section class="ed-section">
+    <div class="ed-num reveal">03</div>
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">Abstract</span>
+        <h2 class="ed-heading">The Problem &amp; Our Approach</h2>
+      </div>
+      <div class="ed-body reveal reveal-d1">
+        <p>
+          While visuomotor policy has made advancements in recent years, contact-rich tasks still remain a challenge. Robotic manipulation tasks that require continuous contact demand explicit handling of <b>compliance and force</b>. However, most visuomotor policies ignore compliance, overlooking the importance of physical interaction with the real world, often leading to excessive contact forces or fragile behavior under uncertainty.
+        </p>
+        <p>
+          Introducing force information into vision-based imitation learning could help improve awareness of contacts. However, current visuomotor policy approaches require a lot of data to perform well. One remedy for data scarcity is to generate data in simulation, yet computationally taxing processes are required to generate data good enough not to suffer from the <b>Sim2Real gap</b>.
+        </p>
+        <p>
+          In this work, we introduce a framework for generating <b>force-informed data in simulation</b>, instantiated by a single human demonstration, and show how coupling with a compliant policy improves the performance of a visuomotor policy learned from synthetic data. We validate our approach on real-robot tasks, including <b>non-prehensile block flipping</b> and a <b>bi-manual object moving</b>, where the learned policy exhibits reliable contact maintenance and adaptation to novel conditions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 04 METHOD ========== -->
+  <section class="ed-section">
+    <div class="ed-num reveal">04</div>
+
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">Method</span>
+        <h2 class="ed-heading">Framework Pipeline</h2>
+      </div>
+      <figure class="fig reveal reveal-d1">
+        <img src="static/img/pipeline.png" alt="3D Compliant Visuomotor Policy Learning Framework">
+        <figcaption class="fig-caption">
+          <strong>3D Compliant Visuomotor Policy Learning Framework:</strong> Starting from a single simulation demonstration, we generate point cloud and force data by introducing virtual targets and applying Laplacian editing beyond the original demonstration. This augmented data is used to train a flow-matching policy that receives point cloud and force input and predicts actions, including an impedance parameter. At rollout time, the policy's output is synthesized into a state velocity field, which is then executed using a Passive Impedance Controller to ensure compliant behaviors. <em>While our data is only generated with one simple geometry for both tasks, the trained policies produce generalizable capabilities beyond the original shapes by using our framework.</em>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ========== 05 ACKNOWLEDGMENTS ========== -->
+  <section class="ed-section">
+    <div class="ed-num reveal">05</div>
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">Acknowledgments</span>
+      </div>
+      <div class="ack-block reveal reveal-d1">
+        <div class="ed-body">
+          <p>
+            We thank our anonymous reviewers, who provided thorough and fair feedback that improved the quality of our paper. This work was supported by the National Science Foundation (NSF) Foundational Research in Robotics (FRR) program under NSF CAREER Award Grant No. FRR-2443721.
+          </p>
+        </div>
+        <img src="https://mateusz-jaszczuk.github.io/rme/static/images/NSF_logo.png" alt="NSF Logo" class="ack-logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 06 BIBTEX ========== -->
+  <section class="ed-section">
+    <div class="ed-num reveal">06</div>
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">Citation</span>
+        <h2 class="ed-heading">BibTeX</h2>
+      </div>
+      <div class="bibtex-box reveal reveal-d1">
+        <button class="bibtex-copy" onclick="copyBibtex()" aria-label="Copy BibTeX">
+          <i class="fas fa-copy"></i> Copy
+        </button>
+        <pre><code id="bibtex-code">@article{li2025flow,
+  title={Flow with the Force Field: Learning 3D Compliant Flow Matching Policies from Force and Demonstration-Guided Simulation Data},
+  author={Li, Tianyu and Li, Yihan and Zhang, Zizhe and Figueroa, Nadia},
+  journal={arXiv preprint arXiv:2510.02738},
+  year={2025}
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="page">
+    Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>. Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
   </div>
 </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+</body>
+</html>
