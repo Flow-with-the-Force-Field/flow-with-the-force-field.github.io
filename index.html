@@ -299,15 +299,10 @@
       </div>
     </div>
 
-    <div class="scroll-cue">
-      <span>Scroll</span>
-      <div class="arrow"></div>
-    </div>
   </section>
 
   <!-- ========== 01 OVERVIEW ========== -->
   <section class="ed-section">
-    <div class="ed-num reveal">01</div>
     <div class="ed-content">
       <div class="reveal">
         <span class="ed-label">Overview</span>
@@ -325,7 +320,6 @@
 
   <!-- ========== 02 VIDEO ========== -->
   <section class="ed-section">
-    <div class="ed-num reveal">02</div>
     <div class="ed-content">
       <div class="reveal">
         <span class="ed-label">Results</span>
@@ -341,21 +335,14 @@
 
   <!-- ========== 03 ABSTRACT ========== -->
   <section class="ed-section">
-    <div class="ed-num reveal">03</div>
     <div class="ed-content">
       <div class="reveal">
         <span class="ed-label">Abstract</span>
-        <h2 class="ed-heading">The Problem &amp; Our Approach</h2>
+        <h2 class="ed-heading">Abstract</h2>
       </div>
       <div class="ed-body reveal reveal-d1">
         <p>
-          While visuomotor policy has made advancements in recent years, contact-rich tasks still remain a challenge. Robotic manipulation tasks that require continuous contact demand explicit handling of <b>compliance and force</b>. However, most visuomotor policies ignore compliance, overlooking the importance of physical interaction with the real world, often leading to excessive contact forces or fragile behavior under uncertainty.
-        </p>
-        <p>
-          Introducing force information into vision-based imitation learning could help improve awareness of contacts. However, current visuomotor policy approaches require a lot of data to perform well. One remedy for data scarcity is to generate data in simulation, yet computationally taxing processes are required to generate data good enough not to suffer from the <b>Sim2Real gap</b>.
-        </p>
-        <p>
-          In this work, we introduce a framework for generating <b>force-informed data in simulation</b>, instantiated by a single human demonstration, and show how coupling with a compliant policy improves the performance of a visuomotor policy learned from synthetic data. We validate our approach on real-robot tasks, including <b>non-prehensile block flipping</b> and a <b>bi-manual object moving</b>, where the learned policy exhibits reliable contact maintenance and adaptation to novel conditions.
+          While visuomotor policy has made advancements in recent years, contact-rich tasks still remain a challenge. Robotic manipulation tasks that require continuous contact demand explicit handling of compliance and force. However, most visuomotor policies ignore compliance, overlooking the importance of physical interaction with the real world, often leading to excessive contact forces or fragile behavior under uncertainty. Introducing force information into vision-based imitation learning could help improve awareness of contacts, but could also require a lot of data to perform well. One remedy for data scarcity is to generate data in simulation, yet computationally taxing processes are required to generate data good enough not to suffer from the Sim2Real gap. In this work, we introduce a framework for generating force-informed data in simulation, instantiated by a single human demonstration, and show how coupling with a compliant policy improves the performance of a visuomotor policy learned from synthetic data. We validate our approach on real-robot tasks, including non-prehensile block flipping and a bi-manual object moving, where the learned policy exhibits reliable contact maintenance and adaptation to novel conditions.
         </p>
       </div>
     </div>
@@ -363,8 +350,6 @@
 
   <!-- ========== 04 METHOD ========== -->
   <section class="ed-section">
-    <div class="ed-num reveal">04</div>
-
     <div class="ed-content">
       <div class="reveal">
         <span class="ed-label">Method</span>
@@ -379,9 +364,133 @@
     </div>
   </section>
 
+  <!-- ========== DATA GENERATION STRATEGIES ========== -->
+  <section class="ed-section">
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">Data Generation</span>
+        <h2 class="ed-heading">Trajectory Modulation Strategies</h2>
+        <p class="ed-sub">From a <b>single demonstration</b>, we generate diverse training data by combining Laplacian editing with force-informed virtual targets — <b>no additional human demos or training needed</b>. Each strategy adds a different axis of variation entirely in simulation.</p>
+      </div>
+      <div class="traj-grid reveal reveal-d1">
+        <figure class="traj-cell">
+          <img src="static/img/traj_original.png" alt="Original reference trajectory">
+          <figcaption>(a) Original</figcaption>
+        </figure>
+        <figure class="traj-cell">
+          <img src="static/img/traj_force.png" alt="Force-informed trajectory">
+          <figcaption>(b) Force-Informed</figcaption>
+        </figure>
+        <figure class="traj-cell">
+          <img src="static/img/traj_laplacian.png" alt="Laplacian editing trajectory">
+          <figcaption>(c) Laplacian Editing</figcaption>
+        </figure>
+        <figure class="traj-cell">
+          <img src="static/img/traj_force_laplacian.png" alt="Force + Laplacian trajectory">
+          <figcaption>(d) Force + Laplacian</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIMENTS: BLOCK FLIPPING ========== -->
+  <section class="ed-section">
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">Experiments</span>
+        <h2 class="ed-heading">Non-Prehensile Block Flipping</h2>
+        <p class="ed-sub">Trained on a single simple-geometry demo in simulation. Evaluated zero-shot on unseen real objects and spatial configurations.</p>
+      </div>
+
+      <div class="exp-block reveal reveal-d1">
+        <div class="exp-sublabel">Object Generalization</div>
+        <div class="video-container">
+          <video controls muted loop playsinline preload="metadata">
+            <source src="static/videos/trim_object_flip.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="exp-caption">Six real-world objects with varied shapes, masses, and surface properties — each flipped with the same policy.</p>
+      </div>
+
+      <div class="exp-block reveal reveal-d1">
+        <div class="exp-sublabel">Spatial Generalization</div>
+        <div class="video-container">
+          <video controls muted loop playsinline preload="metadata">
+            <source src="static/videos/trim_spatial_flip.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="exp-caption">The same policy handling varied initial positions and orientations across the workspace.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIMENTS: BI-MANUAL ========== -->
+  <section class="ed-section">
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">Experiments</span>
+        <h2 class="ed-heading">Bi-Manual Object Moving</h2>
+        <p class="ed-sub">Two arms coordinate through contact forces to transport objects — generalizing across object geometry and start/goal layouts.</p>
+      </div>
+
+      <div class="exp-block reveal reveal-d1">
+        <div class="exp-sublabel">Object Generalization</div>
+        <div class="video-container">
+          <video controls muted loop playsinline preload="metadata">
+            <source src="static/videos/trim_object_bi.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="exp-caption">Different object shapes moved bi-manually with compliant contact maintenance throughout.</p>
+      </div>
+
+      <div class="exp-block reveal reveal-d1">
+        <div class="exp-sublabel">Spatial Generalization</div>
+        <div class="video-container">
+          <video controls muted loop playsinline preload="metadata">
+            <source src="static/videos/trim_spatial_bi.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="exp-caption">Varied start and goal configurations across the table surface.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FUN TEST ========== -->
+  <section class="ed-section">
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">In The Wild</span>
+        <h2 class="ed-heading">Human Intervention &amp; Stacked Objects</h2>
+        <p class="ed-sub">Testing robustness beyond the evaluation set — the policy handles mid-execution human interference and attempts to flip stacked objects it was never trained on.</p>
+      </div>
+      <div class="video-container reveal reveal-d1">
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/flip_fun_test.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ANALYSIS: IMPEDANCE ========== -->
+  <section class="ed-section">
+    <div class="ed-content">
+      <div class="reveal">
+        <span class="ed-label">Analysis</span>
+        <h2 class="ed-heading">Learned Impedance Behavior</h2>
+      </div>
+      <div class="ed-body reveal reveal-d1">
+        <p>
+          Force and impedance profiles from <b>Block Flipping</b>. As the contact force builds along the y-axis during the flip, the learned compliance gain increases in response. The policy becomes softer to maintain safe, continuous contact without explicit rules.
+        </p>
+      </div>
+      <figure class="fig reveal reveal-d1">
+        <img src="static/img/force_impedance_profile.png" alt="Force and impedance profiles from Block Flipping" class="fig-compact">
+      </figure>
+    </div>
+  </section>
+
   <!-- ========== 05 ACKNOWLEDGMENTS ========== -->
   <section class="ed-section">
-    <div class="ed-num reveal">05</div>
     <div class="ed-content">
       <div class="reveal">
         <span class="ed-label">Acknowledgments</span>
@@ -399,7 +508,6 @@
 
   <!-- ========== 06 BIBTEX ========== -->
   <section class="ed-section">
-    <div class="ed-num reveal">06</div>
     <div class="ed-content">
       <div class="reveal">
         <span class="ed-label">Citation</span>
